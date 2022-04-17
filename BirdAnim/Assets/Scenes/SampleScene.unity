@@ -572,8 +572,11 @@ MonoBehaviour:
   rightHumurus: {fileID: 1819755843}
   rightRadius: {fileID: 1318332338}
   rightMadus: {fileID: 1144779364}
+  _speed: 1
   root: {fileID: 1445138473}
   tail: {fileID: 756265007}
+  temp: {x: 0, y: 0, z: 0}
+  _rigidBody: {fileID: 675313311}
 --- !u!4 &1445138473 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5746564759562468899, guid: 21baf0784e9f32e4aa17621648fb1d28,

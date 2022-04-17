@@ -10,22 +10,34 @@ public class ProceduralAnimation : MonoBehaviour
     public Transform rightHumurus;
     public Transform rightRadius;
     public Transform rightMadus;
+    public float _speed = 1f;
+
     public Transform root;
     public Transform tail;
-    private Vector3 subtract;
+    public Vector3 temp = new Vector3(180,180,0);
+    public Vector3 temp2 = new Vector3(90,90,0);
+    public Rigidbody _rigidBody;
     // Start is called before the first frame update
     void Start()
     {
-        
+      
         
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        subtract = leftHumurus.position + leftRadius.position;
-        leftHumurus.position = leftHumurus.position-subtract; 
-        
-        leftHumurus.position = leftHumurus.position + subtract;
+        if(_rigidBody.velocity.magnitude < _speed){
+            float value = Input.GetAxis("Vertical");
+            if(value !=0){
+            rightHumurus.rotation = Quaternion.LookRotation(temp, temp);
+            leftHumurus.rotation = Quaternion.LookRotation(temp, temp);
+
+           }
+
+        }
+        rightHumurus.rotation = Quaternion.LookRotation(-temp2,-temp2);
+
     }
+  
 }
